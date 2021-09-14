@@ -6,19 +6,21 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
-    strategy:
-        fqbn:
-          platforms:
-            - source-url: "https://gamebuino.com/sdk/gamebuino-meta-board-1.2.2.zip"
-              name: "arduino:samd"
-          libraries:
-            - source-url: "git@github.com:Gamebuino/Gamebuino-META.git"
-              version: latest
-
+    
     steps:
       - uses: actions/checkout@v2
+      #- uses: arduino/compile-sketches@v1
+      #  with:
+      #    github-token: ${{ secrets.GITHUB_TOKEN }}
+      #    fqbn: ${{ fqbn }}
+
       - uses: arduino/compile-sketches@v1
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          fqbn: ${{ fqbn }}
+          fqbn: 'arduino:avr:uno'
+          platforms: |
+            - source-url: "https://gamebuino.com/sdk/gamebuino-meta-board-1.2.2.zip"
+              name: "arduino:samd"
+          libraries: |
+            - source-url: "git@github.com:Gamebuino/Gamebuino-META.git"
+              version: latest
