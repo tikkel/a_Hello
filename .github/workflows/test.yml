@@ -12,13 +12,11 @@ jobs:
       - uses: arduino/compile-sketches@v1
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          fqbn:
-            default: "arduino:samd"
+          fqbn: "arduino:samd"
           platforms: |
             - source-url: "https://gamebuino.com/sdk/gamebuino-meta-board-1.2.2.zip"
               name: "arduino:samd"
           libraries: |
             - name: "Gamebuino META"
               version: latest
-          sketch-paths:
-            default: "."
+          sketch-paths: "."
