@@ -22,5 +22,5 @@ jobs:
             - source-url: "https://gamebuino.com/sdk/gamebuino-meta-board-1.2.2.zip"
               name: "arduino:samd"
           libraries: |
-            - source-url: "git@github.com:Gamebuino/Gamebuino-META.git"
+            - name: "Gamebuino META"
               version: latest
