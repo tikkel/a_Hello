@@ -8,17 +8,17 @@ jobs:
     runs-on: ubuntu-latest
 
     strategy:
-      matrix:
         fqbn:
-          - arduino:samd:mkrwifi1010
-          - arduino:samd:nano_33_iot
-          - arduino:megaavr:uno2018:mode=on
-          - arduino:mbed:nano33ble
-          - arduino:mbed_nano:nanorp2040connect
+          platforms:
+            - source-url: "https://gamebuino.com/sdk/gamebuino-meta-board-1.2.2.zip"
+              name: "arduino:samd"
+          libraries:
+            - source-url: "git@github.com:Gamebuino/Gamebuino-META.git"
+              version: latest
 
     steps:
       - uses: actions/checkout@v2
       - uses: arduino/compile-sketches@v1
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          fqbn: ${{ matrix.fqbn }}
+          fqbn: ${{ fqbn }}
