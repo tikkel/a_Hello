@@ -19,3 +19,5 @@ jobs:
           libraries: |
             - name: "Gamebuino META"
               version: latest
+          sketch-paths: "."
+          verbose: "true"
