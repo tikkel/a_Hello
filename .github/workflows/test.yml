@@ -9,18 +9,13 @@ jobs:
     
     steps:
       - uses: actions/checkout@v2
-      #- uses: arduino/compile-sketches@v1
-      #  with:
-      #    github-token: ${{ secrets.GITHUB_TOKEN }}
-      #    fqbn: ${{ fqbn }}
-
       - uses: arduino/compile-sketches@v1
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          fqbn: 'arduino:avr:uno'
-          platforms: |
-            - source-url: "https://gamebuino.com/sdk/gamebuino-meta-board-1.2.2.zip"
-              name: "arduino:samd"
-          libraries: |
-            - name: "Gamebuino META"
-              version: latest
+          fqbn:
+            platforms: |
+              - source-url: "https://gamebuino.com/sdk/gamebuino-meta-board-1.2.2.zip"
+                name: "arduino:samd"
+            libraries: |
+              - name: "Gamebuino META"
+                version: latest
