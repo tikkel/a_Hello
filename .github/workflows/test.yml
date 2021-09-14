@@ -16,6 +16,4 @@ jobs:
         platform-url: https://gamebuino.com/sdk/package_gamebuino_index.json
         required-libraries: Gamebuino META
         sketches-exclude: medias
-        build-properties:
-          All:
-            -DDEBUG
+        build-properties: '{ "All": "-DDEBUG" }'
