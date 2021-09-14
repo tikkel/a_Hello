@@ -19,4 +19,3 @@ jobs:
           libraries: |
             - name: "Gamebuino META"
               version: latest
-          sketch-paths: "a_Hello.ino"
