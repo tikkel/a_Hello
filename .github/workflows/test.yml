@@ -1,22 +1,19 @@
-name: test
-on:
-  - push
-  - pull_request
-
+name: LibraryBuild
+on: [push, pull_request]
 jobs:
   build:
+    name: Test compiling examples for Gamebuino META
     runs-on: ubuntu-latest
-    
+
     steps:
-      - uses: actions/checkout@v2
-      - uses: arduino/compile-sketches@v1
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          platforms: |
-            - source-url: "https://gamebuino.com/sdk/gamebuino-meta-board-1.2.2.zip"
-              name: "gamebuino:samd:gamebuino_meta_native"
-          libraries: |
-            - name: "Gamebuino META"
-              version: latest
-          sketch-paths: "."
-          verbose: "true"
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Compile all examples
+        uses: ArminJo/arduino-test-compile@v3
+      with:
+        arduino-board-fqbn: gamebuino:samd:gamebuino_meta_native
+        platform-url: https://gamebuino.com/sdk/package_gamebuino_index.json
+        required-libraries: Gamebuino META
+        sketches-exclude: medias
+        build-properties: '{ "-DDEBUG -DINFO" }'
