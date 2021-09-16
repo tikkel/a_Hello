@@ -16,4 +16,3 @@ jobs:
         platform-url: https://gamebuino.com/sdk/package_gamebuino_index.json
         required-libraries: SPIMemory,Gamebuino META
         sketches-exclude: medias
-        build-properties: '{ "All": "-DDEBUG" }'
