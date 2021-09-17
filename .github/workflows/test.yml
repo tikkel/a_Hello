@@ -14,7 +14,6 @@ jobs:
       with:
         arduino-board-fqbn: gamebuino:samd:gamebuino_meta_native
         platform-url: https://gamebuino.com/sdk/package_gamebuino_index.json
-        required-libraries: SPIMemory,Gamebuino META
+        arduino-platform: gamebuino:samd,arduino:samd
+        required-libraries: Gamebuino META
         sketches-exclude: medias
-        extra-arduino-cli-args: "--libraries /home/makko/.arduino15/packages/arduino/tools/CMSIS-Atmel/1.2.0/CMSIS/Device/ATMEL/"
-        build-properties: '{ "All": "-DDEBUG" }'
