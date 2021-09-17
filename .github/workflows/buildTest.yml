@@ -21,7 +21,7 @@ jobs:
             name: "gamebuino:samd"
         libraries: |
           - source-url: https://github.com/Gamebuino/Gamebuino-META/archive/refs/heads/master.zip
-          - destination-name: "Gamebuino META"
+            destination-name: "Gamebuino META"
         sketch-paths: |
           - .
         verbose: true
