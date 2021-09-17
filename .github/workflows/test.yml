@@ -16,4 +16,5 @@ jobs:
         platform-url: https://gamebuino.com/sdk/package_gamebuino_index.json
         required-libraries: SPIMemory,Gamebuino META
         sketches-exclude: medias
-        build-properties: '{ "All": "-I/home/makko/.arduino15/packages/arduino/tools/CMSIS-Atmel/1.2.0/CMSIS/Device/ATMEL/" }'
+        extra-arduino-cli-args: "-I/home/makko/.arduino15/packages/arduino/tools/CMSIS-Atmel/1.2.0/CMSIS/Device/ATMEL/"
+        build-properties: '{ "All": "-DDEBUG" }'
