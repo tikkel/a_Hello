@@ -1,4 +1,4 @@
-name: MetaBuild
+name: gamebuinoMetaCompileTest
 on: [push, pull_request]
 jobs:
   build:
@@ -14,6 +14,5 @@ jobs:
       with:
         arduino-board-fqbn: gamebuino:samd:gamebuino_meta_native
         platform-url: https://gamebuino.com/sdk/package_gamebuino_index.json
-        arduino-platform: gamebuino:samd,arduino:samd
+        arduino-platform: gamebuino:samd
         required-libraries: Gamebuino META
-        sketches-exclude: medias
