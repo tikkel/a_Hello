@@ -14,5 +14,5 @@ jobs:
       with:
         arduino-board-fqbn: gamebuino:samd:gamebuino_meta_native
         platform-url: https://gamebuino.com/sdk/package_gamebuino_index.json
-        arduino-platform: gamebuino:samd
+        arduino-platform: arduino:samd
         required-libraries: Gamebuino META
