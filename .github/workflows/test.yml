@@ -1,3 +1,6 @@
+# based on: 
+# https://github.com/marketplace/actions/test-compile-for-arduino
+
 name: gamebuinoMetaCompileTest
 on: [push, pull_request]
 jobs:
@@ -14,5 +17,5 @@ jobs:
       with:
         arduino-board-fqbn: gamebuino:samd:gamebuino_meta_native
         platform-url: https://gamebuino.com/sdk/package_gamebuino_index.json
-        arduino-platform: arduino:samd,gamebuino.samd
+        arduino-platform: gamebuino.samd,arduino:samd
         required-libraries: Gamebuino META
